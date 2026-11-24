@@ -8,18 +8,109 @@
 # keywords such as INPUT, OUTPUT, IF, ELSE, WHILE, SET, or similar terms.
 
 # TODO 1: Identify the information the movement process needs.
-# Consider the player's current room and movement command.
+Set current_room = "Dungeon Entrance"
+Set inventory = empty list
+Set game_over = false
+Set direction = ""
 
 # TODO 2: Prompt for and receive the player's movement command.
+While game_over = false
+    Output "Which direction would you like to move? Enter North, South, East, or West"
+    Input direction
 
 # TODO 3: Validate whether the requested movement is possible from the
-# current room. Show the decision clearly.
+If current_room =  "Main Entrance" AND direction = "west"
+  Set valid_move = true
+Else if current_room = "Main Entrance" AND direction = "north"
+  Set valid_move = true
+Else
+  Set valid_move = false
+End if
 
 # TODO 4: Describe what happens when the movement command is valid.
-# Include the room update and player output.
+If current_room = "Main Entrance" AND direction = "west"
+  Set current_room  = "Puzzle Room"
+
+Else if current_room "Main Entrance" AND direction = "north"
+  set current_room = "Kitchen"
+
+ELSE IF current_room = "Puzzle Room" AND direction = "east"
+    SET current_room = "Dungeon Entrance"
+
+ELSE IF current_room = "Puzzle Room" AND direction = "north"
+    SET current_room = "West Wing"
+
+ELSE IF current_room = "West Wing" AND direction = "south"
+    SET current_room = "Puzzle Room"
+
+ELSE IF current_room = "West Wing" AND direction = "north"
+    SET current_room = "Office"
+
+ELSE IF current_room = "Office" AND direction = "south"
+    SET current_room = "West Wing"
+
+ELSE IF current_room = "Office" AND direction = "east"
+    SET current_room = "North Wing"
+
+ELSE IF current_room = "North Wing" AND direction = "west"
+    SET current_room = "Office"
+
+ELSE IF current_room = "North Wing" AND direction = "east"
+    SET current_room = "Lounge"
+
+ELSE IF current_room = "Lounge" AND direction = "west"
+    SET current_room = "North Wing"
+
+ELSE IF current_room = "Lounge" AND direction = "south"
+    SET current_room = "Dining Room"
+
+ELSE IF current_room = "Dining Room" AND direction = "north"
+    SET current_room = "Lounge"
+
+ELSE IF current_room = "Dining Room" AND direction = "west"
+    SET current_room = "Kitchen"
+
+ELSE IF current_room = "Kitchen" AND direction = "east"
+    SET current_room = "Dining Room"
+
+ELSE IF current_room = "Kitchen" AND direction = "south"
+    SET current_room = "Dungeon Entrance"
+
+ELSE
+    SET valid_move = FALSE
+END IF
+
+If valid_move = true
+  Output "You entered the" + current_room
 
 # TODO 5: Describe what happens when the movement command is invalid.
-# Include the output the player should receive.
+IF valid_move = false
+  Output "You cannot move in that direction from this room."
+
+Else
+  Output "You entered the " + current_room
+End if
+
+If valid_move = true and current_room = "Kitchen"
+
+  If LENGTH(inventory) = 6
+    output "You collected all six items and are ready to fight The Cook!"
+  else
+    Output "You entered the Kitchen without collecting all siz items. The Cook catches you."
+  end if
+
+  Set game_over = true
+
+end while
+
+output "You got made into a meal. Game Over"
+
+End movement.
 
 # TODO 6: Show how movement fits into repeated gameplay.
 # The final game continues accepting commands until a required ending occurs.
+While game_over = false
+  Return to the beginning of the movement loop
+end while
+
+Output "Thanks for playing The Last Course
