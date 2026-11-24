@@ -5,11 +5,11 @@
 
 ## Theme and Storyline
 
-**Theme:**
+The theme of my game is a survival horror experience set inside a larger mansion.
 
 TODO: Name and briefly describe your game's theme.
 
-**Storyline:**
+The Last Course: The player is tasked with exploring the different areas of the building, collecting items that help them survive. The goal is to gather all the necessary items to before encountering the villain, The Cook, a massive heavily scarred man who uses a butchers knife to attack anyone who enters the Kitchen. The overall atmosphere attempts to feel darker and unsettling with the player trying to escape or survive while exploring the mansion.
 
 TODO: In one short paragraph, explain the setting, the player's goal, the items
 the player must gather, and the threat created by the villain.
@@ -18,14 +18,14 @@ the player must gather, and the threat created by the villain.
 
 Project One requires a minimum of eight rooms.
 
-1. TODO: Start room
-2. TODO: Room
-3. TODO: Room
-4. TODO: Room
-5. TODO: Room
-6. TODO: Room
-7. TODO: Room
-8. TODO: Villain room
+1. TODO: Dungeon Entrance
+2. TODO: Puzzle Room
+3. TODO: West Wing
+4. TODO: Office
+5. TODO: North Wing
+6. TODO: Lounge
+7. TODO: Dining Room
+8. TODO: Kitchen
 
 Add more rooms if your design needs them.
 
@@ -34,19 +34,19 @@ Add more rooms if your design needs them.
 With the minimum eight-room design, Project One requires at least six items.
 Every room except the start room and villain room must contain one item.
 
-1. TODO: Item
-2. TODO: Item
-3. TODO: Item
-4. TODO: Item
-5. TODO: Item
-6. TODO: Item
+1. TODO: Map
+2. TODO: Stamp
+3. TODO: Pistol
+4. TODO: Body Armor
+5. TODO: Pistol Ammo
+6. TODO: Knife
 
 If you add rooms beyond the minimum, add an item for every additional room
 except the start room and villain room.
 
 ## Villain
 
-TODO: Identify and briefly describe the villain.
+TODO: The villain is named The Cook. He is a giant of a man, covered in burn scars and cuts. He swings a massive butcher's knife around to try and attack the player hoping to cut them up and make the next course out of them.
 
 ## Storyboard and Map Check
 
