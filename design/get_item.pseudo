@@ -10,21 +10,59 @@
 START get_item
 
     # TODO 1: Identify the information the get-item process needs.
-    # Consider the current room, item in that room, and player's inventory.
+    Set current_room = player's current room
+    Set requested_item = ""
+    Set inventory = player's inventory
+    Set room_item = ""
 
     # TODO 2: Prompt for and receive the player's get-item command.
-
+    Output "Which item would you like to collect?"
+    Input requested_item
     # TODO 3: Validate whether the requested item is available in the current
-    # room. Show the decision clearly.
+    # room.
+    IF current_room = "Puzzle Room"
+        SET room_item = "Map"
+
+    ELSE IF current_room = "West Wing"
+        SET room_item = "Stamp"
+
+    ELSE IF current_room = "Office"
+        SET room_item = "Pistol"
+
+    ELSE IF current_room = "North Wing"
+        SET room_item = "Body Armor"
+
+    ELSE IF current_room = "Lounge"
+        SET room_item = "Pistol Ammo"
+
+    ELSE IF current_room = "Dining Room"
+        SET room_item = "Knife"
+    ELSE
+        SET room_item = "None"
+    END IF
+
 
     # TODO 4: Describe what happens when the item request is valid.
-    # Include the inventory update and player output.
+    If requested_item is not already in inventory
+        Add requested_item to inventory
+        Set room_item = "None"
+        Output "You collected the " + requested_item + "."
+        Output "Your inventory has been updated."
 
     # TODO 5: Describe what happens when the item request is invalid.
-    # Include the output the player should receive.
+    if room_item = "None"
+        output "There are no items to collect in this room."
+    Else if requested_item != room_item
+        Output "That item is not in this room."
+    Else if requested_item is already in inventory
+        Output "You already collected this item."
+    end if
 
     # TODO 6: Show how the process returns to or continues the larger gameplay
     # loop after the command is handled.
+    Output "Returning to the game."
+
+    Return to main game loop
 
 END get_item
 
